@@ -12,7 +12,7 @@ public final class HelloServiceServer {
     /**
      * Start the hello service server.
      */
-    public static void main(String[] args) throws Throwable {
+    public static void main(final String[] args) throws Throwable {
         final String bindAddr = "localhost:5555";
         System.out.println("HelloService listening on: " + bindAddr);
         final ListeningServer server = Thrift.serveIface(bindAddr, new HelloServiceImpl());

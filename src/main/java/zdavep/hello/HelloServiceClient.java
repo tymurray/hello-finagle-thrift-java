@@ -13,8 +13,8 @@ public final class HelloServiceClient {
     /**
      * Print a reply from the service to stdout.
      */
-    protected static Function<HelloMsg, BoxedUnit> printReply = new Function<HelloMsg, BoxedUnit>() {
-        public BoxedUnit apply(HelloMsg msg) {
+    private static final Function<HelloMsg, BoxedUnit> printReply = new Function<HelloMsg, BoxedUnit>() {
+        public BoxedUnit apply(final HelloMsg msg) {
             System.out.println("Received response: " + msg.name());
             return null;
         }
@@ -23,11 +23,11 @@ public final class HelloServiceClient {
     /**
      * Call the sayHello function on the remote hello service.
      */
-    public static void main(String[] args) throws Throwable {
+    public static void main(final String[] args) throws Throwable {
         final String bindAddr = "localhost:5555";
         System.out.println("Calling HelloService on: " + bindAddr);
-        HelloService.FutureIface client = Thrift.newIface(bindAddr, HelloService.FutureIface.class);
-        HelloMsg req = new HelloMsg.Immutable("from Java");
+        final HelloService.FutureIface client = Thrift.newIface(bindAddr, HelloService.FutureIface.class);
+        final HelloMsg req = new HelloMsg.Immutable("from Java");
         Await.ready(client.sayHello(req).map(printReply));
     }
 }

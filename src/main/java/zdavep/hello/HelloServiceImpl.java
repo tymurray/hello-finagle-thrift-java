@@ -6,7 +6,7 @@ import scala.runtime.BoxedUnit;
 /**
  * Hello service implementation.
  */
-public final class HelloServiceImpl implements HelloService.FutureIface {
+final class HelloServiceImpl implements HelloService.FutureIface {
 
     /**
      * Echo a decorated message back to the client.
