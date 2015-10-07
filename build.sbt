@@ -6,8 +6,10 @@ scalaVersion := "2.11.7"
 resolvers += "twitter" at "https://maven.twttr.com/"
 
 libraryDependencies ++= Seq(
-  "com.twitter" %% "finagle-thrift" % "6.28.0",
-  "com.twitter" %% "scrooge-core" % "4.0.0"
+  "com.twitter" %% "finagle-thrift" % "6.29.0",
+  "com.twitter" % "finagle-zipkin_2.11" % "6.29.0",
+  "com.twitter" %% "scrooge-core" % "4.1.0",
+  "org.slf4j" % "slf4j-simple" % "1.5.8"
 )
 
 mainClass in Global := Some("zdavep.hello.HelloServiceServer")
@@ -25,5 +27,3 @@ mergeStrategy in assembly <<= (mergeStrategy in assembly) { (old) =>
     case x => old(x)
   }
 }
-
-com.twitter.scrooge.ScroogeSBT.newSettings
