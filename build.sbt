@@ -6,8 +6,8 @@ scalaVersion := "2.11.7"
 resolvers += "twitter" at "https://maven.twttr.com/"
 
 libraryDependencies ++= Seq(
-  "com.twitter" %% "finagle-thrift" % "6.29.0",
-  "com.twitter" % "finagle-zipkin_2.11" % "6.29.0",
+  "com.twitter" %% "finagle-thrift" % "6.31.0",
+  "com.twitter" % "finagle-zipkin_2.11" % "6.31.0",
   "com.twitter" %% "scrooge-core" % "4.1.0",
   "org.slf4j" % "slf4j-simple" % "1.5.8"
 )
